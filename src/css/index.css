@@ -5,9 +5,31 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(244,244,244);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.bottom-nav{
+  width: 100%;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  justify-content: space-around;
+  height: 50px;
+}
+.bottom-nav a {
+  text-decoration: none;
+  color:#999999;
+  font-size: 30px;
+}
+.bottom-nav a.active{
+  color: coral;
+}
+
+.bottom-nav a i{
+  font-size: 30px;
+}
+

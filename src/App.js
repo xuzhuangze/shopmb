@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
+import Myroute from './router';
+import routeRules from './router/firstRules'
+import axios from "axios";
+import React from 'react'
+
+React.Component.prototype.axios = axios;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Myroute rules={routeRules}></Myroute>
+        </div>
+    );
 }
+
 
 export default App;
