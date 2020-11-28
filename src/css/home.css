@@ -26,6 +26,7 @@ header input::-webkit-input-placeholder {
     text-align: center;
 }
 
+/*顶部导航*/
 .top-nav {
     width: 100%;
     display: flex;
@@ -50,7 +51,9 @@ header input::-webkit-input-placeholder {
     height: 100%;
     padding: 10px;
 }
+.activity .kill .kill-goods{
 
+}
 .activity .everyday {
     display: flex;
     flex-direction: column;
