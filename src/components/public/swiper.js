@@ -14,14 +14,16 @@ class _Swiper extends Component {
     }
 
     componentDidMount() {
-        this.axios.get(this.props.getBanner).then(res => {
-            let bannerArr = res.data.list ? res.data.list : [];
-            this.setState({bannerArr});
-            new Swiper('.swiper-container', {
-                loop: true,
-                autoplay: true,
-            })
-        });
+        if (this.props.getBanner) {
+            this.axios.get(this.props.getBanner).then(res => {
+                let bannerArr = res.data.list ? res.data.list : [];
+                this.setState({bannerArr});
+                new Swiper('.swiper-container', {
+                    loop: true,
+                    autoplay: true,
+                })
+            });
+        }
     }
 
     render() {

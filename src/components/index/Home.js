@@ -14,6 +14,7 @@ class Home extends Component {
             tablelist: [],
             goodsArr: [],
             bannerArr:[],
+            curIndex:0,
         }
     }
 
@@ -23,15 +24,6 @@ class Home extends Component {
             this.setState({firstcate: res.data.list})
         });
 
-
-        this.axios.get(this.props.getBanner).then(res => {
-            let bannerArr = res.data.list ? res.data.list : [];
-            this.setState({bannerArr});
-            new Swiper('.swiper-container', {
-                loop: true,
-                autoplay: true,
-            })
-        });
         // 获取选项卡商品
         this.axios.get('/api/getindexgoods').then(res => {
             console.log(res, 'goods')
@@ -43,7 +35,8 @@ class Home extends Component {
 
 
     changeTable(n) {
-
+        console.log(n);
+        this.setState({curIndex:n});
         let goodsArr = this.state.tablelist[n].content;
         this.setState({goodsArr})
     }
@@ -106,7 +99,7 @@ class Home extends Component {
                     {
                         this.state.tabletit.map((item, index) => {
                             return (
-                                <li key={index} onClick={() => this.changeTable(index)}>{item}</li>
+                                <li key={index} className={this.state.curIndex==index? "active" : ''} onClick={() => this.changeTable(index)}>{item}</li>
                             )
                         })
                     }

@@ -51,9 +51,11 @@ header input::-webkit-input-placeholder {
     height: 100%;
     padding: 10px;
 }
-.activity .kill .kill-goods{
+
+.activity .kill .kill-goods {
 
 }
+
 .activity .everyday {
     display: flex;
     flex-direction: column;
@@ -128,4 +130,9 @@ ul.table {
     display: flex;
     list-style: none;
     justify-content: space-evenly;
+}
+
+
+ul.table li.active {
+    background: #9a6e3a;
 }
